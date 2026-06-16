@@ -20,6 +20,7 @@ app.post(
   "/checkout-session",
   async (req: Request<{}, {}, CheckoutBody>, res) => {
     const { amount, items } = req.body;
+    console.log("POST request: ", items);
 
     const lineItems = items.map((item) => {
       return {
